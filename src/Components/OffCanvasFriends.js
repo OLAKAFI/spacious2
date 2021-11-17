@@ -62,7 +62,7 @@ function OffCanvasFriends() {
                     <Row className="d-flex mb-3" key={canvasContent.id}>
                         <div className="col-3 ">
                             <div className=' OffCanvasStyle' >
-                                <Image src={canvasContent.image} className='img-fluid h-100 rounded ' />
+                                <img src={canvasContent.image} className='img-fluid h-100 rounded ' />
                             </div>
 
                         </div>
