@@ -9,7 +9,7 @@ import { Row, Image} from 'react-bootstrap';
 const canvasContents = [
     {
         id: 1,
-        image: './spacious/images/characters/character-16.png',
+        image: './images/characters/character-16.png',
         characterName:"Darlen Robertson",
         friends: "23 friends"
 
@@ -17,7 +17,7 @@ const canvasContents = [
 
     {
         id: 2,
-        image: './spacious/images/characters/character-13.png',
+        image: './images/characters/character-13.png',
         characterName:"Katling Murphy",
         friends: "23 friends"
 
@@ -25,7 +25,7 @@ const canvasContents = [
 
     {
         id: 3,
-        image: './spacious/images/characters/character-3.png',
+        image: './images/characters/character-3.png',
         characterName:"Jenny Wilson",
         friends: "23 friends"
 
@@ -33,21 +33,21 @@ const canvasContents = [
 
     {
         id: 4,
-        image: './spacious/images/characters/character-5.png',
+        image: './images/characters/character-5.png',
         characterName:"Arlene Meloy",
         friends: "23 friends"
 
     },
     {
         id: 5,
-        image: './spacious/images/characters/character-8.png',
+        image: './images/characters/character-8.png',
         characterName:"Darrel Steward",
         friends: "23 friends"
 
     },
     {
         id: 6,
-        image: './spacious/images/characters/character-6.png',
+        image: './images/characters/character-6.png',
         characterName:"Bessie Cooper",
         friends: "23 friends"
 
