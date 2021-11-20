@@ -29,13 +29,15 @@ body {
   border-radius: 16px;
   background: #FFFFFF;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
-  width: 272px;
-  height: 200px;
+  width: 272px !important;
+  height: 200px !important;
   overflow: hidden;
+  
 }
 
 Card{
   font-family: 'Poppins', sans-serif;
+  width: 272px !important;
 }
 
 
@@ -94,14 +96,15 @@ Card.Img .character-img{
 .float-button-style{
   position:fixed;
 	bottom:30px;
-	right:5px;
-	text-align:center;
-
+	right:30px;
+  padding: 0px;
+  text-align: right;
+	
 }
 
 .offcanvas-style{
   width: 408px !important;
-  height: 880px !important;
+  height: 100% !important;
   
   top: 32px !important;
   background: #FFFFFF;
@@ -121,9 +124,25 @@ Card.Img .character-img{
   color: #121C33;
 }
 
+.fs-12{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height */
+
+
+  /* primary */
+
+  color: #121C33;
+
+  opacity: 0.6;
+}
+
+
 .canvas-popultn-style{
-  margin-top: 2px !important;
-  margin-bottom: 2px !important;
+  margin-top: 1px !important;
+  margin-bottom: 1px !important;
   padding-bottom: 2px !important;
  
 }

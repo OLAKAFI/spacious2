@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Card, Offcanvas} from 'react-bootstrap';
 import {  useState } from 'react';
 import CreateNewPlanet from './CreateNewPlanet';
-import OffCanvasFriends from './OffCanvasFriends';
+import OffcanvasPlanet from './OffcanvasPlanet';
+import {planets} from "./GeneralList"
 
 
 
@@ -12,171 +13,112 @@ import OffCanvasFriends from './OffCanvasFriends';
 
 function PlanetCard({ name, ...props }) {
 
+    const [info, setInfo] = useState("");
+    
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const planets = [
-        {
-            id: 1,
-            image: './images/planets/planet-5.svg',
-            planetName:"Alpha",
-            props: "Prop 235"
+    const [showSidebar, setShowSidebar] = useState(false);
 
-        },
+    
 
-        {
-            id: 2,
-            image: './images/planets/planet-2.svg',
-            planetName:"Alpha",
-            props: "Prop 235"
+    const [showModal, setShowModal] = useState(false);
 
-        },
+    const handleCloseModal = () => setShowModal(false);
+    const handleShowModal = () => setShowModal(true);
 
-        {
-            id: 3,
-            image: './images/planets/planet-3.svg',
-            planetName:"Alpha",
-            props: "Prop 235"
+   
 
-        },
+    const handleCloseSidebar = () =>  {
+        setShowSidebar(false);
+        let cards = document.querySelector('.planet-cards')
+        cards.style.border = "none";
 
-        {
-            id: 4,
-            image: './images/planets/planet-6.svg',
-            planetName:"Alpha",
-            props: "Prop 235"
+        let characterRow = document.querySelector('#planet-row')
+        characterRow.style.marginRight = "0px";
+        
 
-        },
-        {
-            id: 5,
-            image: './images/planets/planet-3.svg',
-            planetName:"Alpha",
-            props: "Prop 235"
+    }    
+    const handleShowSidebar = (e) => {
+        let cards = document.querySelector('.planet-cards')
+        
+        cards.style.border = "none";
+        
+        setShowSidebar(true);
 
-        },
-        {
-            id: 6,
-            image: './images/planets/planet-1.svg',
-            planetName:"Alpha",
-            props: "Prop 235"
+        let characterRow = document.querySelector('#planet-row')
+        characterRow.style.marginRight = "200px";
+        characterRow.classList.remove('row-cols-xl-4')
+        characterRow.classList.remove('row-cols-lg-3')
+        characterRow.classList.remove('row-cols-md-2')
+        
+        characterRow.classList.add('row-cols-xl-3')
 
-        },
-        {
-            id: 7,
-            image: './images/planets/planet-2.svg',
-            planetName:"Alpha",
-            props: "Prop 235"
+        
 
-        },
-        {
-            id: 8,
-            image: './images/planets/planet-4.svg',
-            planetName:"Alpha",
-            props: "Prop 235"
+       setInfo(e)
+    }
 
-        },
-        {
-            id: 9,
-            image: './images/planets/planet-7.svg',
-            planetName:"Alpha",
-            props: "Prop 235"
+   
+    
 
-        },
-        {
-            id: 10,
-            image: './images/planets/planet-9.svg',
-            planetName:"Alpha",
-            props: "Prop 235"
-
-        },
-        {
-            id: 11,
-            image: './images/planets/planet-8.svg',
-            planetName:"Alpha",
-            props: "Prop 235"
-
-        },
-        {
-            id: 12,
-            image: './images/planets/planet-2.svg',
-            planetName:"Alpha",
-            props: "Prop 235"
-
-        },
-    ]
     return (
-        <Row xs={1} md={3} lg={4} sm={1} className="d-flex justify-content-between">
+        <div>
+            {/* This is the row that contains the character cards */}
+            <Row xs={1} md={2} lg={3} xl={4} className="d-flex justify-content-between g-3" id="planet-row" >
 
-            {
-                planets.map(planet => (
-                    
-                    <Col xs="auto" md="auto" lg="3" sm="auto">
+                {
+                    planets.map(planet => (
                         
-                            <Card className="card-style my-3 " key={planet.id}>
-                                <a href="#"   className=" text-decoration-none" data-bs-toggle="offcanvas"  role="button" aria-controls="offcanvasExample" onClick={handleShow}>
-                                    <div className="planet-size mx-auto">
-                                        <Card.Img variant="top" className="img-fluid" src={planet.image} /> 
+                            <Col sm="6" xs="auto" md="4" lg="4"  id="planet-col" className="my-3">
+                                {/* This is the character card takes input from the character array to repeat itself  */}
+                                <Card className="card-style " key={planet.id} id="planet-cards" className="planet-cards" onClick={() => handleShowSidebar(planet)}>
+                                   
+                                        <div className="character-size ">
+                                            <Card.Img variant="top" className="img-fluid h-100" src={planet.image} alt=""/>
+                                        </div>
+                                                
+                                        <Card.Body className="my-2 character-card-body" id="planet-body">
+                                            <Card.Title className="fs-16 m-0 p-0 canvas-popultn-style">{planet.name}</Card.Title>
+                                            <Card.Text>
+                                                <small className="text-muted fs-12 m-0 p-0 canvas-popultn-style">{planet.pop} friends</small>
+                                            </Card.Text>
+                                        </Card.Body>
 
-                                    </div>
-                                    <Card.Body>
-                                        <Card.Title className="fw-bold fs-16 ">{planet.planetName}</Card.Title>
-                                        <Card.Text>
-                                            <small className="text-muted fs-12">{planet.props}</small>
-                                        </Card.Text>
-                                    </Card.Body>
-                                </a>
-                                            
-                            </Card>
-                        
+                                   
+                                                    
+                                </Card>
+                                    
+                                
                             
-                        
-                        
-                    </Col>
-            
-                    
-                ))
-            }
-            {
-
-           
-                <Offcanvas show={show} onHide={handleClose} {...props} placement="end" className="offcanvas-style" >
-                    <Offcanvas.Header closeButton className="ms-auto me-4">
-                    
-                    </Offcanvas.Header>
-                    <Offcanvas.Title className="fs-32  ms-3">Jane Cooper</Offcanvas.Title>
-                    <Offcanvas.Body >
-                        <p className="fs-16-norm">Jane is really a nice person. She’s been living on planet Alpha for the last 10 years. </p>
-                        <Row className="mt-4">
-                            <Col className=" ">
-                                <p className="fs-16-normal canvas-popultn-style">Population</p>
-                                <p className="fs-16 canvas-popultn-style">234</p>
-
                             </Col>
-                            
-                        </Row>
-                        <p className="fs-16 text-muted mt-3">CHARACTERS</p>
-                        {
-                            <Row className="d-flex">
-                                <OffCanvasFriends/>
 
-                            </Row>
-                            
-                        }
+
                         
-
-                    </Offcanvas.Body>
-                    
-                </Offcanvas>
-            }   
-            <div className=" float-button-style">
-                <CreateNewPlanet/> 
-
-            </div>
+                        
+                
+                        
+                    ))
+                }
 
 
-        </Row>
+                <div className=" float-button-style ">
+                    <CreateNewPlanet handleShow={handleShow}/> 
+
+                </div>
+
+            </Row>
+
+            <OffcanvasPlanet show={showSidebar} close={handleCloseSidebar} title={info.name} desc={info.desc}   />
+
+
+            
+        
+            
+    </div>
+        
         
 
         

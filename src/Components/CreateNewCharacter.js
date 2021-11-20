@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Modal, Form, Image} from 'react-bootstrap';
 
 import {  useState } from 'react'
+import plusicon from '../myimage/plus-64-icon.png';
 
 function CreateNewCharacter() {
     const [show, setShow] = useState(false);
@@ -12,7 +13,7 @@ function CreateNewCharacter() {
     return (
         <div>
             <Button variant="" className="rounded-circle"  onClick={handleShow}>
-                <Image src="./images/assets/plus-64-icon.png"  roundedCircle />
+                <Image src={plusicon}  roundedCircle />
             </Button>
             
     

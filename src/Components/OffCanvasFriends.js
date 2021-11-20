@@ -54,7 +54,7 @@ const canvasContents = [
     }
     
 ]
-function OffCanvasFriends() {
+function OffCanvasFriends({}) {
     return (
         <div>
             {
