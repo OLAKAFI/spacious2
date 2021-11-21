@@ -77,7 +77,7 @@ function PlanetCard({ name, ...props }) {
                                 <Card className="card-style " key={planet.id} id="planet-cards" className="planet-cards" onClick={() => handleShowSidebar(planet)}>
                                    
                                         <div className="character-size ">
-                                            <Card.Img variant="top" className="img-fluid h-100 planet-size" src={planet.image} alt=""/>
+                                            <Card.Img variant="" className="img-fluid h-100  character-img" src={planet.image} alt=""/>
                                         </div>
                                                 
                                         <Card.Body className="my-2 character-card-body" id="planet-body">

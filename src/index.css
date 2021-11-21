@@ -75,6 +75,8 @@ Card{
 .planet-size{
   height: 120px;
   width: 120px;
+  padding: auto !important;
+  margin: auto !important;
 }
 
 
