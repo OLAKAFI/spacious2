@@ -67,17 +67,17 @@ function PlanetCard({ name, ...props }) {
     return (
         <div>
             {/* This is the row that contains the character cards */}
-            <Row xs={1} md={2} lg={3} xl={4} className="d-flex justify-content-between g-3" id="planet-row" >
+            <Row xs={1} md={2} lg={3} xl={4} className="d-flex justify-content-left g-3" id="planet-row" >
 
                 {
                     planets.map(planet => (
                         
-                            <Col sm="6" xs="auto" md="4" lg="4"  id="planet-col" className="my-3">
+                            <Col md="4" lg="4" id="planet-col" className="my-3">
                                 {/* This is the character card takes input from the character array to repeat itself  */}
                                 <Card className="card-style " key={planet.id} id="planet-cards" className="planet-cards" onClick={() => handleShowSidebar(planet)}>
                                    
                                         <div className="character-size ">
-                                            <Card.Img variant="top" className="img-fluid h-100" src={planet.image} alt=""/>
+                                            <Card.Img variant="top" className="img-fluid h-100 planet-size" src={planet.image} alt=""/>
                                         </div>
                                                 
                                         <Card.Body className="my-2 character-card-body" id="planet-body">

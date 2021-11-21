@@ -71,7 +71,7 @@ function CharacterCards() {
                 {
                     characters.map(character => (
                         
-                            <Col xs="auto" md="auto" lg="4" sm="12" id="character-col" className="my-3">
+                            <Col md="4" lg="4" id="character-col" className="my-3">
                                 {/* This is the character card takes input from the character array to repeat itself  */}
                                 <Card className="card-style my-3 pb-2 " key={character.id} id="character-cards" className="character-cards" onClick={() => handleShowSidebar(character)}>
                                    

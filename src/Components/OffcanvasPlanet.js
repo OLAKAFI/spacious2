@@ -34,20 +34,16 @@ function OffcanvasPlanet({show, close, title, desc}) {
                         
                         <Offcanvas.Body >
                             
-                            <Row className="mt-4">
+                            <Row className="">
                                 <Col>
-                                    <p className="fs-16-normal">Planets</p>
-                                    <p className="fs-16">Alpha</p>
+                                    <p className="fs-16-normal canvas-popultn-style">Population</p>
+                                    <p className="fs-16 canvas-popultn-style">234</p>
 
                                 </Col>
-                                <Col>
-                                    <p className="fs-16-normal">Friends</p>
-                                    <p className="fs-16">23</p>
-
-                                </Col>
+                                
                             </Row>  
                             
-                            <p className="fs-16 text-muted mt-3">FRIENDS</p>
+                            <p className="fs-16 text-muted mt-3">CHARACTERS</p>
 
 
                             <div>
